@@ -17,9 +17,10 @@
 
             //On connecte le formulaire a la table avec INSERT INTO suivi du nom de la table, on defini quelle valeur sera envoyée dans quelle collonne ex: prenom sera envoyé dans test_prenom
             $sth = $dbco->prepare("INSERT INTO test_inscription(test_prenom, test_nom) VALUES(:prenom, :nom)");
+                
                 //Requetes pour lier les colonnes aux valeurs
                 $sth->bindParam(':prenom',$prenom);
-                    $sth->bindParam(':nom',$nom);
+                $sth->bindParam(':nom',$nom);
                         $sth->execute();
                         
                         //on renvoie l'utilisateur a une page voulue
